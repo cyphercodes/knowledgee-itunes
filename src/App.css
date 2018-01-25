@@ -1,28 +1,164 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+ul.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+ul.list li {
+    border: 1px solid #ccc;
+    border-bottom: none;
+    padding: 8px 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+ul.list.clickable li:hover {
+    background-color: #fafafa;
+    cursor: pointer;
+}
+
+ul.list li:first-of-type {
+    border-radius: 4px 4px 0px 0px;
+}
+
+ul.list li:last-of-type {
+    border-bottom: 1px solid #ccc;
+    border-radius: 0px 0px 4px 4px;
+}
+
+ul.list li.image-item img {
+    width: 100%;
+    max-width: 100px;
+}
+
+ul.list li.image-item .col-2 {
+    text-align: center;
+}
+
+ul.list li.image-item h4, ul.list li.image-item p {
+    margin: 0;
+}
+
+ul.list li.image-item h4 small {
+    font-size: 9px;
+    padding-left: 10px;
+    font-weight: 100;
+}
+
+ul.list li.image-item p.released {
+    font-size: 12px;
+}
+
+ul.list li.image-item p {
+    font-size: 14px;
+}
+
+.heart {
+    fill: white;
+    stroke: #000;
+    position: relative;
+    top: 5px;
+    width: 100%;
+    padding: 1px;
+    max-width: 30px;
+    cursor: pointer;
+}
+
+.heart.active {
+    fill: red;
+    stroke-width: 0px;
+    animation: pulse 1s infinite ease;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.spinner {
+    width: 0px;
+    height: 0px;
+    position: relative;
+    margin: 0px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+}
+
+.spinner.active {
+    width: 40px;
+    height: 40px;
+    margin: 50px auto;
+    visibility: visible;
+    opacity: 1;
+}
+
+.bounce1, .bounce2 {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #66afe9;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.bounce2 {
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
+}
+
+@keyframes sk-bounce {
+    0%, 100% {
+        transform: scale(0.0);
+    }
+    50% {
+        transform: scale(1.0);
+    }
+}
+
+@media only screen and (min-width: 33.75em) {
+    .responsive-block {
+        width: 90%;
+    }
+
+    ul.list li.image-item h4 small {
+        white-space: nowrap;
+    }
+}
+
+@media only screen and (min-width: 45em) {
+    .responsive-block {
+        width: 80%;
+    }
+
+    ul.list li.image-item {
+        text-align: left;
+    }
+
+}
+
+@media only screen and (min-width: 60em) {
+    .responsive-block {
+        width: 60%;
+    }
 }
