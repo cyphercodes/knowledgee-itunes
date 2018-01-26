@@ -260,6 +260,10 @@ input.btn {
     width: 100%;
 }
 
+.hidden {
+    display: none;
+}
+
 input[type="text"], input[type="search"] {
     outline: none;
     border-radius: 4px;
