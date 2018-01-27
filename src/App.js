@@ -3,6 +3,7 @@ import Album from './components/Album';
 import './App.css';
 import Artist from "./components/Artist";
 import Favourites from "./tools/Favourites";
+import Api from "./tools/Api";
 
 var timeoutHolder = null;
 
@@ -41,7 +42,8 @@ class App extends Component {
             albums: [],
             results: [],
         })
-        fetch('https://itunes.apple.com/search?term=' + value + '&entity=musicArtist').then(res => {
+        Api.searchArtists(value).then(res => {
+                console.log(res);
                 res.json().then(data => {
                     this.setState({
                         results: data.results,
@@ -68,7 +70,7 @@ class App extends Component {
         this.setState({
             loading: true
         })
-        fetch('https://itunes.apple.com/lookup?id=' + id + '&entity=album').then(res => {
+        Api.lookupAlbums(id).then(res => {
                 res.json().then(data => {
                     this.setState({
                         albums: data.results,
