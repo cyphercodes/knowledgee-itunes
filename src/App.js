@@ -43,7 +43,6 @@ class App extends Component {
             results: [],
         })
         Api.searchArtists(value).then(res => {
-                console.log(res);
                 res.json().then(data => {
                     this.setState({
                         results: data.results,
