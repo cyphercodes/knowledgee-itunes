@@ -41,7 +41,7 @@ It was decided to use the `fetch` JavaScript function for the API calls since al
 
 This class handles the storage of favourite albums.
 
-The way it does it is by using localStorage to make them persistent across refreshes.
+The way it does it is by using localStorage to make them persistent (across refreshes & even closing/opening of the app).
 
 Since localStorage only allows the storage of strings, and to shortcut the import and use of a tool like SQlite, we have added methods to encode the data into a JSON string on the SET operation and decode it back to an actual JavaScript object on the GET operation.
 
