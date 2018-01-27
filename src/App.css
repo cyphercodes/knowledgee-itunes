@@ -62,6 +62,27 @@ ul.list li.image-item p {
     font-size: 14px;
 }
 
+.filter {
+    text-align: center;
+    margin: 4px 0px;
+}
+
+.filter select {
+    outline: none;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    padding: 4px;
+    transition: box-shadow 0.1s ease-in-out;
+    color: #555;
+    width: 100%;
+    display: block;
+}
+
+.filter select:focus {
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 8px rgba(102, 175, 233, .6);
+    border-color: #66afe9;
+}
+
 .heart {
     fill: white;
     stroke: #000;
@@ -155,10 +176,20 @@ ul.list li.image-item p {
         text-align: left;
     }
 
+    .filter {
+        text-align: left;
+    }
+
+    .filter select {
+        max-width: 25%;
+        display: inline;
+    }
+
 }
 
 @media only screen and (min-width: 60em) {
     .responsive-block {
         width: 60%;
     }
+
 }

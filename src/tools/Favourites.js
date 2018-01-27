@@ -45,6 +45,23 @@ class Favourites {
             this.add(album);
         }
     }
+
+    static getArtists() {
+        return this.get().map(fav => {
+            return fav.artistName
+        }).filter((elem, index, self) => {
+            return index === self.indexOf(elem);
+        });
+    }
+
+    static getWithArtistName(name = 'all') {
+        if (name === 'all') {
+            return this.get();
+        }
+        return this.get().filter(fav => {
+            return fav.artistName === name;
+        })
+    }
 }
 
 export default Favourites;

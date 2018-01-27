@@ -87,15 +87,23 @@ class App extends Component {
         });
     }
 
-    getFavourites() {
+    clickFavourites() {
+        this.getFavourites();
+    }
+
+    getFavourites(artistName = 'all') {
         this.setState({
-            favourites: Favourites.get(),
+            favourites: Favourites.getWithArtistName(artistName),
             gotAlbums: false,
             gotArtists: true,
             gotFavourites: true,
             albums: [],
             results: []
         })
+    }
+
+    onFilterChange() {
+        this.getFavourites(this.refs.filter.value);
     }
 
     render() {
@@ -120,7 +128,7 @@ class App extends Component {
             }
 
             if (albums.length < 1 && resultItems.length < 1 && this.state.gotFavourites) {
-                favourites = this.state.favourites.map(fav => {
+                favourites = this.state.favourites.map((fav) => {
                     return (
                         <Album key={fav.collectionId} album={fav}/>
                     )
@@ -153,7 +161,7 @@ class App extends Component {
                     <div className="row">
                         <div className="col-12 center">
                             <input className="btn blue" type="submit" value="Search"/>
-                            <button type="button" className="btn red" onClick={this.getFavourites.bind(this)}>My
+                            <button type="button" className="btn red" onClick={this.clickFavourites.bind(this)}>My
                                 Favourites
                             </button>
                         </div>
@@ -188,6 +196,20 @@ class App extends Component {
                                 My Favourites
                                 {(this.state.favourites.length > 0) ? ' (' + this.state.favourites.length + ' albums)' : ''}
                             </h4>
+
+
+                            <div className="filter">
+                                <label>Filter by Artist: &nbsp;
+                                    <select onChange={this.onFilterChange.bind(this)} ref="filter">
+                                        <option value='all'>All</option>
+                                        {Favourites.getArtists().map((artist, index) => {
+                                            return (
+                                                <option value={artist} key={index}>{artist}</option>
+                                            )
+                                        })}
+                                    </select>
+                                </label>
+                            </div>
                             <ul className="list">
                                 {favourites}
                             </ul>
