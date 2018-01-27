@@ -19,7 +19,7 @@ Also, data and states were handled purely by react in a very basic way without i
 
 This will help understand React better and appreciate the power & benefits of the add-on tools when we use them later in more advanced projects.
 
-### Directory Structure & Code explanation
+### Directory Structure & Code Explanation
 
 The main component for the app is `App.js` which is located in the root of `src`.
 
