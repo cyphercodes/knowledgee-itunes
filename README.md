@@ -47,7 +47,7 @@ Since localStorage only allows the storage of strings, and to shortcut the impor
 
 This class has methods for easily adding and deleting favourite albums to our localStorage. In those methods, there's even logic to make sure no entry is repeated in our storage.
 
-In addition, it has methods for other operations like filtering the favourite albums by artist name.
+In addition, it has methods for other operations like filtering the favourite albums by artist name and getting an array of unique artist names to be used in the select filter in the `My Favourites` tab.
 
 
 #### `components/Artist.js`
@@ -92,3 +92,20 @@ npm run
 You should get a webpack mini-server running that you can navigate to in your browser. 
 
 The URL will be displayed in your command prompt window.
+
+## How to use the application
+
+Simply type in the artist name in the search box you find and just as soon as you finish typing, the results from the iTunes API should show up below.
+
+Click on the artist you require, and a list of the artist's albums will show up with some basic information.
+
+To add an album to your favourites, simply click on the heart next to that album.
+
+To view you favourites, click on the `My Favourites` button under the search box.
+
+To remove an album from your favourites, click on the red heart next to it. The album will still appear in your favourites but with a white heart until the next favourites refresh. This gives you the benefit of keeping the album in sight to quickly re-favourite it in case you removed it by mistake.
+
+To filter your favourites by a specific artist, select an artist from the `Filter by Artist` drop-down at the top right of you favourites list.
+
+In addition, a blue `Search` button is available to quickly navigate back to your most recent search results.
+ 
