@@ -19,7 +19,7 @@ Also, data and states were handled purely by react in a very basic way without i
 
 This will help understand React better and appreciate the power & benefits of the add-on tools when we use them later in more advanced projects.
 
-### Directory Structure
+### Directory Structure & Code explanation
 
 The main component for the app is `App.js` which is located in the root of `src`.
 
@@ -28,8 +28,6 @@ Then we have two main directories, `components` and `tools`.
 In `tools` you can find all the javascript classes that help us clean our code and simplify code usability. 
 
 In `components`, you can find all the additional React components for the project
-
-### Some code explanation
 
 #### `tools/API.js`
 
