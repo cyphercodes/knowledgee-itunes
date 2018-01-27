@@ -95,7 +95,7 @@ The URL will be displayed in your command prompt window.
 
 ## How to use the application
 
-Simply type in the artist name in the search box you find and just as soon as you finish typing, the results from the iTunes API should show up below.
+Simply type in the artist name in the search box you find and just as soon as you finish typing, the results from the iTunes API should automatically show up below.
 
 Click on the artist you require, and a list of the artist's albums will show up with some basic information.
 
