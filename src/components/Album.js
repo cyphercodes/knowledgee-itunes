@@ -1,8 +1,15 @@
 import React, {Component} from 'react';
 import Favourites from "../tools/Favourites";
 
+/*
+The React component for rendering an Album
+ */
 class Album extends Component {
 
+    /*
+    return a string that represents the number of tracks in an album properly
+    It adds or removes 's' in 'tracks' depending on whether the count is 1 or different than 1
+     */
     trackCount(count) {
         if (count === 1) {
             return count + ' track';
@@ -10,6 +17,9 @@ class Album extends Component {
         return count + ' tracks';
     }
 
+    /*
+    Add an album to our favourites
+     */
     favourite(album) {
         Favourites.toggle(album);
         this.forceUpdate();

@@ -1,12 +1,6 @@
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
-
+/*
+General list specific styles below
+ */
 ul.list {
     list-style: none;
     margin: 0;
@@ -35,6 +29,9 @@ ul.list li:last-of-type {
     border-radius: 0px 0px 4px 4px;
 }
 
+/*
+Updated list items that have an image and some data (used for albums)
+ */
 ul.list li.image-item img {
     width: 100%;
     max-width: 100px;
@@ -62,6 +59,9 @@ ul.list li.image-item p {
     font-size: 14px;
 }
 
+/*
+CSS rules for our filter select input
+ */
 .filter {
     text-align: center;
     margin: 4px 0px;
@@ -83,6 +83,10 @@ ul.list li.image-item p {
     border-color: #66afe9;
 }
 
+/*
+Below are the CSS rules for the heart next to each album (used for adding an album to favourites)
+The heart also uses keyframes gently animate as if it is pulsing only if the heart was active
+ */
 .heart {
     fill: white;
     stroke: #000;
@@ -112,6 +116,10 @@ ul.list li.image-item p {
     }
 }
 
+/*
+Below is the spinner CSS rules
+Ir consists of two circles, and each circle is animated using keyframes to scale up then scale down
+ */
 .spinner {
     width: 0px;
     height: 0px;
@@ -139,7 +147,6 @@ ul.list li.image-item p {
     position: absolute;
     top: 0;
     left: 0;
-
     animation: sk-bounce 2.0s infinite ease-in-out;
 }
 
@@ -157,6 +164,10 @@ ul.list li.image-item p {
     }
 }
 
+/*
+Media specific rules responsible for the responsiveness of the project
+It makes it look good on all screen sizes
+ */
 @media only screen and (min-width: 33.75em) {
     .responsive-block {
         width: 90%;

@@ -142,7 +142,7 @@ class App extends Component {
         let resultItems = [];
         let albums = [];
         let favourites = [];
-        if (!this.state.loading) {
+        if (!this.state.loading) { // get data only in case the state is not loading (if the state is loading, it means a get request is already in progress)
             albums = this.state.albums.filter(album => {
                 return album.wrapperType === 'collection';
 
@@ -168,11 +168,15 @@ class App extends Component {
             }
 
         }
-        let loading = this.state.loading ? 'spinner active' : 'spinner';
+        let loading = this.state.loading ? 'spinner active' : 'spinner'; // hide or display loader depending on the state variable
+
+        // handle different classes
         let resultsClass = resultItems.length > 0 ? '' : 'hidden';
         let albumsClass = albums.length > 0 ? '' : 'hidden';
         let favouritesClass = favourites.length > 0 ? '' : 'hidden';
         let noResultsFoundClass = this.state.loading || (!this.state.gotAlbums && !this.state.gotArtists && !this.state.gotFavourites) || resultItems.length > 0 || albums.length > 0 || favourites.length > 0 ? 'row hidden' : 'row';
+
+        // handle text to display in case no results were found for a particular get operation
         let noResultsText = 'No results found &#9785;';
         if (this.state.gotAlbums) {
             noResultsText = 'No albums found &#9785; click search to go back to search results...';
