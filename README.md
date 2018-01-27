@@ -47,7 +47,7 @@ Since localStorage only allows the storage of strings, and to shortcut the impor
 
 This class has methods for easily adding and deleting favourite albums to our localStorage. In those methods, there's even logic to make sure no entry is repeated in our storage.
 
-In addition, it has methods for other operations like filtering the favourite albums by Artist name.
+In addition, it has methods for other operations like filtering the favourite albums by artist name.
 
 
 #### `components/Artist.js`
