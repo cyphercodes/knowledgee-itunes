@@ -96,7 +96,6 @@ class Favourites {
                 uniqueFavs.push(favs[i]);
             }
         }
-        console.log(uniqueFavs);
         return uniqueFavs.map(fav => {
             return {id: fav.artistId, name: fav.artistName}
         });
