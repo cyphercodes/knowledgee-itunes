@@ -5,12 +5,15 @@ import Artist from "./components/Artist";
 import Favourites from "./tools/Favourites";
 import Api from "./tools/Api";
 
+// Timeout holder used for the reference to the timeout when user starts typing in the search textbox to determine when the user finishes typing
+// @TODO: Figure out if there's a better place to place this other than as a global variable
 var timeoutHolder = null;
 
 class App extends Component {
 
     constructor() {
         super();
+        // Initial state
         this.state = {
             results: [],
             loading: false,
@@ -22,21 +25,34 @@ class App extends Component {
         }
     }
 
+    /*
+    onSubmit method captures the submit event on the search form
+     */
     onSubmit(e) {
         this.doSearch(this.refs.search.value);
         e.preventDefault();
     }
 
+    /*
+    onChange method captures the change event on the search form
+     */
     onChange(e) {
+
+        // Start loading as soon as user starts typing
         this.setState({
             loading: true
         });
+
+        // Code to detect when user stops typing and fire the actual search when that happens
         clearTimeout(timeoutHolder);
         timeoutHolder = setTimeout(() => {
             this.doSearch(this.refs.search.value);
         }, 500);
     }
 
+    /*
+    Method responsible for the actual search
+     */
     doSearch(value) {
         this.setState({
             albums: [],
@@ -61,10 +77,16 @@ class App extends Component {
         });
     }
 
+    /*
+    Handle click event on an artist from the search results
+     */
     clickArtist(id) {
         this.getAlbums(id);
     }
 
+    /*
+    Get all albums with specific artist ID
+     */
     getAlbums(id) {
         this.setState({
             loading: true
@@ -88,10 +110,16 @@ class App extends Component {
         });
     }
 
+    /*
+    Handle 'click' event on the 'My Favourites' button
+     */
     clickFavourites() {
         this.getFavourites();
     }
 
+    /*
+    method to grab the favourites according to selected artist name and set the state properly
+     */
     getFavourites(artistName = 'all') {
         this.setState({
             favourites: Favourites.getWithArtistName(artistName),
@@ -103,6 +131,9 @@ class App extends Component {
         })
     }
 
+    /*
+    Handle 'change' event on filter select input
+     */
     onFilterChange() {
         this.getFavourites(this.refs.filter.value);
     }
