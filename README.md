@@ -11,7 +11,7 @@ This project is built using React and pure (framework-less) CSS
 
 ### Framework & Tools:
 
-It was decided to use pure React as well without added tools or libraries to get a better view on the core power of React.
+It was decided to use pure React without added tools or libraries to get a better view on the core power of React.
 
 For example, a single page application was done manually and react-router was not used.
 
@@ -25,6 +25,6 @@ The main component for the app is `App.js` which is located in the root of `src`
 
 Then we have two main directories, `components` and `tools`.
 
-In `tools` you can find all the javascript classes that help us clean our code and simplify usability. 
+In `tools` you can find all the javascript classes that help us clean our code and simplify code usability. 
 
-In `components`, you can find all the additional React components in the project
+In `components`, you can find all the additional React components for the project
