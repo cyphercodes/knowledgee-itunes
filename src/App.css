@@ -64,6 +64,10 @@ ul.list li.image-item p {
     font-size: 14px;
 }
 
+.margin-top-5 {
+    margin-top: 5px;
+}
+
 /*
 CSS rules for our filter select input
  */

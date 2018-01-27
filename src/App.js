@@ -197,7 +197,8 @@ class App extends Component {
                     <div className="row">
                         <div className="col-12 center">
                             <input className="btn blue" type="submit" value="Search"/>
-                            <button type="button" className="btn red" onClick={this.clickFavourites.bind(this)}>My
+                            <button type="button" className="btn red margin-top-5"
+                                    onClick={this.clickFavourites.bind(this)}>My
                                 Favourites
                             </button>
                         </div>
