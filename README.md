@@ -31,11 +31,11 @@ In `components`, you can find all the additional React components for the projec
 
 #### `tools/API.js`
 
-This class handles the HTTP requests done to the iTunes API.
+This class handles the HTTP requests made to the iTunes API.
 
 The methods inside are static for easier usability and they return a promise for better control of the responses.
 
-It was decided to use the `fetch` JavaScript functions for the API calls since all our requests are GET methods and they are very simple and straightforward.
+It was decided to use the `fetch` JavaScript function for the API calls since all our requests are GET methods and they are very simple and straightforward.
 
 #### `tools/Favourites.js`
 
