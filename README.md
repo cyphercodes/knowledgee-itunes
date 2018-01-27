@@ -82,7 +82,7 @@ This CSS stylesheet contains all of the class-specific styles for our applicatio
 
 First, you have to make sure that you have NodeJS installed.
 
-Then, simply clone the repository in your local environment and run:
+Then, simply clone the repository in your local environment, navigate to the project in a command-prompt and run the following lines:
 
 ```
 npm install
