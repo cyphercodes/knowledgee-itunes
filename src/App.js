@@ -120,9 +120,9 @@ class App extends Component {
     /*
     method to grab the favourites according to selected artist name and set the state properly
      */
-    getFavourites(artistName = 'all') {
+    getFavourites(id = 'all') {
         this.setState({
-            favourites: Favourites.getWithArtistName(artistName),
+            favourites: Favourites.getWithArtistId(id),
             gotAlbums: false,
             gotArtists: true,
             gotFavourites: true,
@@ -241,7 +241,7 @@ class App extends Component {
                                         <option value='all'>All</option>
                                         {Favourites.getArtists().map((artist, index) => {
                                             return (
-                                                <option value={artist} key={index}>{artist}</option>
+                                                <option value={artist.id} key={index}>{artist.name}</option>
                                             )
                                         })}
                                     </select>

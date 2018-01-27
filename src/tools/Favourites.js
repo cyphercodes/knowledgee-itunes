@@ -83,23 +83,35 @@ class Favourites {
     This is used for the 'Filter by Artist' select field in the 'My Favourites' section
      */
     static getArtists() {
-        return this.get().map(fav => {
-            return fav.artistName
-        }).filter((elem, index, self) => {
-            return index === self.indexOf(elem);
+        var favs = this.get();
+        var uniqueFavs = [];
+        for (var i = 0; i < favs.length; i++) {
+            var found = false;
+            for (var j = 0; j < uniqueFavs.length; j++) {
+                if (favs[i].artistId === uniqueFavs[j].artistId) {
+                    found = true;
+                }
+            }
+            if (!found) {
+                uniqueFavs.push(favs[i]);
+            }
+        }
+        console.log(uniqueFavs);
+        return uniqueFavs.map(fav => {
+            return {id: fav.artistId, name: fav.artistName}
         });
     }
 
     /*
-    Get the list of favourite albums that are by one specific artist specified by the artist's name
+    Get the list of favourite albums by one specific artist specified by the artist's id
     This is used to actually filter out the favourite albums by artist in the 'My Favourites' section
      */
-    static getWithArtistName(name = 'all') {
-        if (name === 'all') {
+    static getWithArtistId(id = 'all') {
+        if (id === 'all') {
             return this.get();
         }
         return this.get().filter(fav => {
-            return fav.artistName === name;
+            return fav.artistId == id;
         })
     }
 }
